@@ -1,5 +1,13 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 body, html{
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -15,9 +23,4 @@ main {
     text-align: center;
 }
 
-/** {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}*/
 
