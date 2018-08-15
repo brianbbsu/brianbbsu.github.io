@@ -4,37 +4,20 @@
             box-sizing: border-box;
 }
 
-body, html{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Ubuntu", "Helvetica", "微軟雅黑", "Microsoft YaHei", "Segoe UI Semibold", "Segoe UI", 
-                 "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-    background: rgb(242,242,242);
-    /*background: -moz-linear-gradient(45deg, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 11%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 11%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%);
-    background: linear-gradient(45deg, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 11%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 );*/
-}
-
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100%;
+    min-height: calc(100% - 50px);
 }
 
 #avatar {
     border-radius: 50%;
     height: auto;
     width: auto;
-    max-width: 185px;
-    margin: 20px;
-    margin-top: 0px;
+    width: 185px;
+    margin-bottom: 20px;
 }
 
 #name-div {
@@ -55,16 +38,74 @@ main {
 
 #motto {
     text-align: center;
-    word-spacing: 0.1ex;
-    font-size: 23px;
+    word-spacing: 0ex;
+    font-size: 22px;
     font-weight: 400;
     padding-top: 10px;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 17px;
+    opacity: 0.5;
+}
+
+#github-link{
+    outline: none;
 }
 
 .no-break {
     display: inline-block;
 }
 
+@-webkit-keyframes fadeout {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-moz-keyframes fadeout {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-o-keyframes fadeout {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes fadeout {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
 
+.fadeout {
+    -webkit-animation: fadeout 0.5s forwards; /* Safari 4+ */
+    -moz-animation:    fadeout 0.5s forwards; /* Fx 5+ */
+    -o-animation:      fadeout 0.5s forwards; /* Opera 12+ */
+    animation:         fadeout 0.5s forwards; /* IE 10+, Fx 29+ */
+}
 
+@-webkit-keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
 
+.fadein {
+    -webkit-animation: fadein 1s forwards; /* Safari 4+ */
+    -moz-animation:    fadein 1s forwards; /* Fx 5+ */
+    -o-animation:      fadein 1s forwards; /* Opera 12+ */
+    animation:         fadein 1s forwards; /* IE 10+, Fx 29+ */
+}
