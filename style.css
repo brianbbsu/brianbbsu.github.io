@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -10,6 +12,7 @@ main {
     align-items: center;
     flex-direction: column;
     min-height: calc(100% - 50px);
+    padding-top: 25px;
 }
 
 #avatar {
@@ -39,9 +42,40 @@ main {
 #motto {
     text-align: center;
     word-spacing: 0ex;
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 300;
     padding-top: 10px;
+}
+
+#aboutme-btn {
+    margin-top: 35px;
+    font-size: 19px;
+    width: 130px;
+    padding: 8px 0;
+    text-align: center;
+    color: rgb(130,130,130);
+    border: 2px solid rgb(130,130,130);
+    border-radius: 50px; 
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    word-spacing: 50%;
+}
+
+#aboutme-btn:hover,#aboutme-btn:active {
+    background-color: rgb(130,130,130);
+    color: white;
+    
+}
+
+#aboutme-btn:active {
+    transform: scale(0.9);
+    background-color: rgb(130,130,130);
+    color: white;
 }
 
 #footer {
@@ -62,50 +96,19 @@ main {
     display: inline-block;
 }
 
-@-webkit-keyframes fadeout {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-@-moz-keyframes fadeout {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-@-o-keyframes fadeout {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-@keyframes fadeout {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 .fadeout {
-    -webkit-animation: fadeout 0.5s forwards; /* Safari 4+ */
-    -moz-animation:    fadeout 0.5s forwards; /* Fx 5+ */
-    -o-animation:      fadeout 0.5s forwards; /* Opera 12+ */
-    animation:         fadeout 0.5s forwards; /* IE 10+, Fx 29+ */
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    opacity: 0;
+    display: none;
 }
 
-@-webkit-keyframes fadein {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-moz-keyframes fadein {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-o-keyframes fadein {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@keyframes fadein {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.fadein {
-    -webkit-animation: fadein 1s forwards; /* Safari 4+ */
-    -moz-animation:    fadein 1s forwards; /* Fx 5+ */
-    -o-animation:      fadein 1s forwards; /* Opera 12+ */
-    animation:         fadein 1s forwards; /* IE 10+, Fx 29+ */
+main.fadein {
+    transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    opacity: 1;
 }

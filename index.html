@@ -8,7 +8,6 @@
     <meta name="description" content="Brian Su (蘇柏瑄)'s personal website.">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-
     <style>
         body, html{
             height: 100%;
@@ -17,8 +16,11 @@
         }
         body {
             font-family: "Ubuntu", "Helvetica", "微軟雅黑", "Microsoft YaHei", "Segoe UI Semibold", "Segoe UI", 
-                         "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+            "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
             background: rgb(242,242,242);
+        }
+        main.loading {
+            opacity: 0;
         }
         #loading-block {
             position: fixed;
@@ -41,23 +43,32 @@
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
-    </style>
+        </style>
+        <link rel="stylesheet" href="style.css" media="QAQ" onload="if(media!='all')media='all'">
+        <noscript>
+            <link rel="stylesheet" href="style.css">
+        </noscript>
 </head>
 <body>
     <div id="loading-block" style="display: none"><div id="block-content"><span>Loading</span><span id="dots">&nbsp;&bull;</span></div></div>
+    
     <main>
         <img src="avatar.jpg" id="avatar" alt="Avatar" class="">
         <div id="name-div" class="">
             <span class="no-break" id="zh-name">蘇柏瑄</span><span class="no-break" id="en-name">Brian Su</span>
         </div>
-        <span id="motto" class="">I'm a happy programer.</span>
+        <span id="motto" class="">I'm a happy programmer.</span>
+        <a href="./" id="aboutme-btn">About Me</a>
     </main>
+
     <div id="footer">
         Brian Su&nbsp;&nbsp;<a href="https://github.com/brianbbsu/brianbbsu.github.io" target="_blank" id="github-link"><img height="16" width="16" src="github.svg" /></a>&nbsp;&nbsp;2018
     </div> 
+
     <script>
         document.getElementById("loading-block").style.display = "block";
-        document.getElementsByTagName("main")[0].style.opacity = 0;
+        document.getElementsByTagName("main")[0].classList.add("loading");
+        
         var dots_count = 1;
         var dots_animation = window.setInterval( function() {
             var dots = document.getElementById("dots");
@@ -75,17 +86,18 @@
             var clear_block = function(event){
                 event.target.style.display="none";
                 window.clearInterval(dots_animation);
+                document.getElementsByTagName("main")[0].classList.remove("loading");
                 document.getElementsByTagName("main")[0].classList.add("fadein");
             };
             
-            blk.addEventListener("webkitAnimationEnd", clear_block,false);
-            blk.addEventListener("oAnimationEnd", clear_block,false);
-            blk.addEventListener("mozAnimationEnd", clear_block,false);
-            blk.addEventListener("AnimationEnd", clear_block,false);
+            blk.addEventListener("transitionend", clear_block,false);
+            blk.addEventListener("webkitTransitionEnd", clear_block,false);
+            blk.addEventListener("oTransitionEnd", clear_block,false);
+            blk.addEventListener("MSTransitionEnd", clear_block,false);
             
         };
     </script>
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </body>
 </html>
