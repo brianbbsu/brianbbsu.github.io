@@ -11,19 +11,26 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-width: 100%;
     min-height: calc(100% - 50px);
     padding-top: 25px;
 }
 
 #avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     border-radius: 50%;
-    height: auto;
-    width: auto;
     width: 185px;
     margin-bottom: 20px;
 }
 
 #name-div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     position: relative;
     text-align: center;
 }
@@ -40,6 +47,10 @@ main {
 }
 
 #motto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     text-align: center;
     word-spacing: 0ex;
     font-size: 20px;
@@ -48,6 +59,10 @@ main {
 }
 
 #aboutme-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
     margin-top: 35px;
     font-size: 19px;
     width: 130px;
@@ -64,6 +79,29 @@ main {
     -o-transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     word-spacing: 50%;
+}
+
+@supports (display: flex){
+    #avatar {
+        display: unset;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    #name-div {
+        display: unset;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    #motto {
+        display: unset;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    #aboutme-btn {
+        display: unset;
+        margin-left: unset;
+        margin-right: unset;
+    }
 }
 
 #aboutme-btn:hover,#aboutme-btn:active {
@@ -103,6 +141,10 @@ main {
     -webkit-transition: all 0.5s ease;
     opacity: 0;
     display: none;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 main.fadein {
