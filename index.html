@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>蘇柏瑄 Brian Su</title>
-    <meta name="description" content="Brian Su (蘇柏瑄)'s personal website.">
+    <title>蘇柏瑄&nbsp;&nbsp;Brian Su - A Happy Programmer</title>
+    <meta name="description" content="蘇柏瑄 Brian Su - A Happy Programmer. I'm Brian Su from Taiwan, and I'm a happy programmer.">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <style>
@@ -52,15 +52,14 @@
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
-        </style>
-        <link rel="stylesheet" href="style.css" media="QAQ" onload="if(media!='all')media='all'">
-        <noscript>
-            <link rel="stylesheet" href="style.css">
-        </noscript>
+    </style>
+    <link rel="stylesheet" href="style.css" media="QAQ" onload="if(media!='all')media='all'">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
 </head>
 <body>
-    <div id="loading-block" style="display: none"><div id="block-content"><span>Loading</span><span id="dots">&nbsp;&bull;</span></div></div>
-    
+    <div id="loading-block" style="display: none"><div id="block-content"><span>Loading</span><span id="dots"></span></div></div>
     <main>
         <img src="avatar.jpg" id="avatar" alt="Avatar" class="">
         <div id="name-div" class="">
@@ -78,7 +77,7 @@
         document.getElementById("loading-block").style.display = "block";
         document.getElementsByTagName("main")[0].classList.add("loading");
         
-        var dots_count = 1;
+        var dots_count = 0;
         var dots_animation = window.setInterval( function() {
             var dots = document.getElementById("dots");
                 if ( dots_count === 3 ){
@@ -106,7 +105,5 @@
             
         };
     </script>
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </body>
 </html>
