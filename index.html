@@ -40,26 +40,19 @@
             background: rgb(242,242,242);
             z-index: 99;
             font-size: 30px;
-        }
-        #block-content {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -moz-transform: translate(-50%, -50%);
-            -o-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+            display: block;
         }
     </style>
-    <link rel="stylesheet" href="style.css" media="QAQ" onload="if(media!='all')media='all'">
     <noscript>
-        <link rel="stylesheet" href="style.css">
+        <style>
+            #loading-block {
+                display: None !important;
+            }
+        </style>
     </noscript>
 </head>
 <body>
-    <div id="loading-block" style="display: none"><div id="block-content"><span>Loading</span><span id="dots"></span></div></div>
+    <div id="loading-block"></div>
     <main>
         <img src="avatar.jpg" id="avatar" alt="Avatar" class="">
         <div id="name-div" class="">
@@ -72,38 +65,22 @@
     <div id="footer">
         Brian Su&nbsp;&nbsp;<a href="https://github.com/brianbbsu/brianbbsu.github.io" target="_blank" id="github-link"><img height="16" width="16" src="github.svg" /></a>&nbsp;&nbsp;2018-2019
     </div> 
-
     <script>
-        document.getElementById("loading-block").style.display = "block";
         document.getElementsByTagName("main")[0].classList.add("loading");
-        
-        var dots_count = 0;
-        var dots_animation = window.setInterval( function() {
-            var dots = document.getElementById("dots");
-                if ( dots_count === 3 ){
-                    dots.innerHTML = "";
-                    dots_count = 0;
-                }else{
-                    dots.innerHTML += "&nbsp;&bull;";
-                    dots_count += 1;
-                } 
-        }, 150);
         window.onload = function(){
             let blk = document.getElementById("loading-block");
             blk.classList.add("fadeout");
             var clear_block = function(event){
                 event.target.style.display="none";
-                window.clearInterval(dots_animation);
                 document.getElementsByTagName("main")[0].classList.remove("loading");
                 document.getElementsByTagName("main")[0].classList.add("fadein");
             };
-            
             blk.addEventListener("transitionend", clear_block,false);
             blk.addEventListener("webkitTransitionEnd", clear_block,false);
             blk.addEventListener("oTransitionEnd", clear_block,false);
             blk.addEventListener("MSTransitionEnd", clear_block,false);
-            
         };
     </script>
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>

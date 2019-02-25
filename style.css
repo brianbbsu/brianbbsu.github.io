@@ -143,14 +143,10 @@ main {
     display: none;
 }
 
-.w-100 {
-    width: 100%;
-}
-
 main.fadein {
-    transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    -webkit-transition: all 1.5s ease;
+    transition: all 1.0s ease;
+    -moz-transition: all 1.0s ease;
+    -o-transition: all 1.0s ease;
+    -webkit-transition: all 1.0s ease;
     opacity: 1;
 }
