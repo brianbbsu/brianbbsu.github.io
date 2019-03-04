@@ -62,7 +62,6 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
     margin-top: 35px;
     font-size: 19px;
     width: 130px;
@@ -70,7 +69,33 @@ main {
     text-align: center;
     color: rgb(130,130,130);
     border: 2px solid rgb(130,130,130);
-    border-radius: 50px; 
+    border-radius: 50px;
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    word-spacing: 50%;
+}
+
+#btn-div {
+    width: 100%;
+}
+
+#blog-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    font-size: 19px;
+    width: 130px;
+    padding: 8px 0;
+    text-align: center;
+    color: rgb(130,130,130);
+    border: 2px solid rgb(130,130,130);
+    border-radius: 50px;
     text-decoration: none;
     outline: none;
     background-color: transparent;
@@ -102,6 +127,18 @@ main {
         margin-left: unset;
         margin-right: unset;
     }
+    #blog-btn {
+        display: unset;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    #btn-div {
+        display: flex;
+        justify-content: space-between;
+        margin-left: unset;
+        margin-right: unset;
+        max-width: 270px;
+    }
 }
 
 #aboutme-btn:hover,#aboutme-btn:active {
@@ -111,6 +148,17 @@ main {
 }
 
 #aboutme-btn:active {
+    transform: scale(0.9);
+    background-color: rgb(130,130,130);
+    color: white;
+}
+
+#blog-btn:hover,#blog-btn:active {
+    background-color: rgb(130,130,130);
+    color: white;
+}
+
+#blog-btn:active {
     transform: scale(0.9);
     background-color: rgb(130,130,130);
     color: white;
